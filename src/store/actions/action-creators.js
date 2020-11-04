@@ -1,4 +1,4 @@
-import {GET_QUESTIONS, SAVE_NEW_QUESTION} from "./action-types";
+import {GET_QUESTIONS, GET_USERS, SAVE_NEW_QUESTION, SAVE_QUESTION_ANSWER} from "./action-types";
 
 /**
  * return an action object with all questions from the data
@@ -21,5 +21,29 @@ export function newQuestion(question){
     return {
         type: SAVE_NEW_QUESTION,
         question
+    }
+}
+
+/**
+ *
+ * @param users
+ * @returns {{type: string, users: *}}
+ */
+export function allUsers(users){
+    return {
+        type:GET_USERS,
+        users
+    }
+}
+
+/**
+ *
+ * @param answer{{authedUser:string,qid:string,answer:string}}
+ * @returns {{answer: *, type: string}}
+ */
+export function newAnswer(answer){
+    return {
+        type:SAVE_QUESTION_ANSWER,
+        answer
     }
 }
