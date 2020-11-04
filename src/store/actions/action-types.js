@@ -1,0 +1,2 @@
+export const GET_QUESTIONS = 'GET_QUESTIONS' ;
+export const SAVE_NEW_QUESTION = 'SAVE_NEW_QUESTION' ;
