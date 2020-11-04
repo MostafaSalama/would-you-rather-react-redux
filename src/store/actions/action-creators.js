@@ -1,4 +1,4 @@
-import {GET_QUESTIONS, GET_USERS, SAVE_NEW_QUESTION, SAVE_QUESTION_ANSWER} from "./action-types";
+import {SET_QUESTIONS, SET_USERS, SAVE_NEW_QUESTION, SAVE_QUESTION_ANSWER} from "./action-types";
 
 /**
  * return an action object with all questions from the data
@@ -7,7 +7,7 @@ import {GET_QUESTIONS, GET_USERS, SAVE_NEW_QUESTION, SAVE_QUESTION_ANSWER} from 
  */
 export function allQuestions(questions) {
     return {
-        type:GET_QUESTIONS,
+        type:SET_QUESTIONS,
         questions
     }
 }
@@ -31,7 +31,7 @@ export function newQuestion(question){
  */
 export function allUsers(users){
     return {
-        type:GET_USERS,
+        type:SET_USERS,
         users
     }
 }

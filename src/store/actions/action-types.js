@@ -1,5 +1,5 @@
-export const GET_QUESTIONS = 'GET_QUESTIONS' ;
+export const SET_QUESTIONS = 'SET_QUESTIONS' ;
 export const SAVE_NEW_QUESTION = 'SAVE_NEW_QUESTION' ;
 
-export const GET_USERS = 'GET_USERS' ;
+export const SET_USERS = 'SET_USERS' ;
 export const SAVE_QUESTION_ANSWER = 'SAVE_QUESTION_ANSWER' ;
