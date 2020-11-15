@@ -4,6 +4,7 @@ import {
 	SAVE_NEW_QUESTION,
 	SAVE_QUESTION_ANSWER,
 	SET_LOADING,
+	SET_AUTH_USER,
 } from './action-types';
 
 /**
@@ -63,5 +64,12 @@ export function setLoading(loading) {
 	return {
 		type: SET_LOADING,
 		value: loading,
+	};
+}
+
+export function setAuthUser(username) {
+	return {
+		type: SET_AUTH_USER,
+		username,
 	};
 }

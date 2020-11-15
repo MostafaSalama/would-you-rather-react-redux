@@ -1,4 +1,9 @@
-import { SET_LOADING, SET_QUESTIONS, SET_USERS } from '../actions/action-types';
+import {
+	SET_AUTH_USER,
+	SET_LOADING,
+	SET_QUESTIONS,
+	SET_USERS,
+} from '../actions/action-types';
 import { _getQuestions, _getUsers } from '../../data/_DATA';
 import { allQuestions, allUsers, setLoading } from '../actions/action-creators';
 
@@ -34,6 +39,15 @@ export function isLoading(state = false, { type, value }) {
 	switch (type) {
 		case SET_LOADING:
 			return value;
+		default:
+			return state;
+	}
+}
+
+export function authUser(state = '', { type, username }) {
+	switch (type) {
+		case SET_AUTH_USER:
+			return username;
 		default:
 			return state;
 	}
