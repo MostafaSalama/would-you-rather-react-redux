@@ -1,15 +1,49 @@
-import React from 'react';
+import React, { useState } from 'react';
 import QuestionItem from '../QuestionItem';
-import useQuestionsWithAvatars from '../../hooks/useQuestionsWithAvatars';
-
+import useAnswerAndUnansweredQuestions from '../../hooks/useAnswerAndUnansweredQuestions';
+import styles from './QuestionList.module.css';
 function QuestionsList() {
-	const questions = useQuestionsWithAvatars();
+	const [
+		answeredQuestions,
+		unAnsweredQuestions,
+	] = useAnswerAndUnansweredQuestions();
+	const [currentQuestions, setCurrentQuestions] = useState(answeredQuestions);
+	const [isAnsweredSelected, setAnsweredSelected] = useState(true);
+
+	function setQuestions() {
+		if (isAnsweredSelected) {
+			setCurrentQuestions(unAnsweredQuestions);
+			setAnsweredSelected(false);
+			return;
+		}
+		setCurrentQuestions(answeredQuestions);
+		setAnsweredSelected(true);
+	}
 	return (
 		<div>
-			{questions.map((q) => (
+			<div className={styles.btnGroup}>
+				<button
+					className={`btn ${styles.btnPrimary} ${
+						isAnsweredSelected ? styles.btnActive : ''
+					}`}
+					onClick={setQuestions}
+				>
+					Answered
+				</button>
+				<button
+					className={`btn ${styles.btnPrimary} ${
+						!isAnsweredSelected ? styles.btnActive : ''
+					}`}
+					onClick={setQuestions}
+				>
+					UnAnswered
+				</button>
+			</div>
+			{currentQuestions.map((q) => (
 				<QuestionItem key={q.id} question={q} />
 			))}
 		</div>
 	);
 }
+
 export default QuestionsList;
