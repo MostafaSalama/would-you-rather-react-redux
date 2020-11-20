@@ -7,8 +7,10 @@ function QuestionsList() {
 		answeredQuestions,
 		unAnsweredQuestions,
 	] = useAnswerAndUnansweredQuestions();
-	const [currentQuestions, setCurrentQuestions] = useState(answeredQuestions);
-	const [isAnsweredSelected, setAnsweredSelected] = useState(true);
+	const [currentQuestions, setCurrentQuestions] = useState(
+		unAnsweredQuestions,
+	);
+	const [isAnsweredSelected, setAnsweredSelected] = useState(false);
 
 	function setQuestions() {
 		if (isAnsweredSelected) {

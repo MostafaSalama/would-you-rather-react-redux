@@ -6,6 +6,7 @@ import { Redirect, Switch, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import PrivateRoute from './components/PrivateRoute';
+import Leaderboard from './pages/Leaderboard';
 function App() {
 	return (
 		<div>
@@ -13,6 +14,9 @@ function App() {
 			<Switch>
 				<PrivateRoute exact path="/">
 					<Home />
+				</PrivateRoute>
+				<PrivateRoute exact path="/leaderboard">
+					<Leaderboard />
 				</PrivateRoute>
 				<Route path="/login">
 					<Login />

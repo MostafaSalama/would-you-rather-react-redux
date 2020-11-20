@@ -1,0 +1,36 @@
+.container {
+	background-color: var(--secondary-background);
+	margin: 20px;
+	display: flex;
+	font-size: 1.3rem;
+	width: 80%;
+}
+.userInfo {
+	display: flex;
+	flex-direction: column;
+	border-right: 2px solid #f0d3ff;
+	justify-content: center;
+	align-items: center;
+	font-weight: bolder;
+	width: 25%;
+	padding: 20px;
+}
+.userStatistics {
+	display: flex;
+	flex-grow: 1;
+	align-items: center;
+	padding: 10px;
+	flex-wrap: wrap;
+}
+.infoText {
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	flex-grow: 1;
+	flex-wrap: wrap;
+}
+.importantText {
+	font-weight: bolder;
+	color: var(--primary-color);
+	margin: 0 auto;
+}
