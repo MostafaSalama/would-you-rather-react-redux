@@ -1,11 +1,11 @@
 import React from 'react';
 import useUsersStatistics from '../../hooks/useUsersStatistics';
 import LeaderboardItem from '../LeaderboardItem';
-
+import styles from './LeaderboardList.module.css';
 const LeaderboardList = () => {
 	const data = useUsersStatistics();
 	return (
-		<div>
+		<div className={styles.listContainer}>
 			{data.map((d) => (
 				<LeaderboardItem {...d} />
 			))}
