@@ -1,0 +1,12 @@
+.btnGroup {
+	text-align: center;
+	margin-top: 20px;
+}
+.btnPrimary {
+	font-weight: 800;
+	border-radius: 5px;
+}
+.btnActive {
+	background-color: var(--primary-color);
+	color: #ffffff;
+}
