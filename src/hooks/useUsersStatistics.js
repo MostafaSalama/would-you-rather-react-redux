@@ -11,6 +11,8 @@ export default function useUsersStatistics() {
 			nOfQuestions,
 			nOfAnswers,
 			total,
+			name: user.name,
+			avatarURL: user.avatarURL,
 		});
 	});
 
