@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import styles from './LeaderboardItem.module.css';
 const LeaderboardItem = ({
 	name,
 	avatarURL,
@@ -9,8 +9,8 @@ const LeaderboardItem = ({
 	total,
 }) => {
 	return (
-		<div>
-			<div>
+		<div className={styles.container}>
+			<div className={styles.userInfo}>
 				<div>
 					<img alt={`${name} Avatar`} src={avatarURL} />
 				</div>
@@ -18,15 +18,20 @@ const LeaderboardItem = ({
 					<p>{name}</p>
 				</div>
 			</div>
-			<div>
-				<p>
-					<span>Questions</span> <span>{nOfQuestions}</span>
+			<div className={styles.userStatistics}>
+				<p className={styles.infoText}>
+					<span>Questions</span>{' '}
+					<span className={styles.importantText}>{nOfQuestions}</span>
 				</p>
-				<p>
-					<span>Answers</span> <span>{nOfAnswers}</span>
+				<p className={styles.infoText}>
+					{' '}
+					<span>Answers</span>{' '}
+					<span className={styles.importantText}>{nOfAnswers}</span>
 				</p>
-				<p>
-					<span>Total</span> <span>{total}</span>
+				<p className={styles.infoText}>
+					{' '}
+					<span>Total</span>{' '}
+					<span className={styles.importantText}>{total}</span>
 				</p>
 			</div>
 		</div>
