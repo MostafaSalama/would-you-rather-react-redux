@@ -7,10 +7,10 @@ export default function useAnsweredAndUnAnsweredQuestions() {
 	const auth = useAuth();
 	const allQuestions = useQuestionsWithAvatars();
 	const answeredQuestions = allQuestions.filter(
-		(q) => !!users[auth.authUser].answers[q.id],
+		(q) => !!auth.authUser.answers[q.id],
 	);
 	const unansweredQuestions = allQuestions.filter(
-		(q) => !users[auth.authUser].answers[q.id],
+		(q) => !auth.authUser.answers[q.id],
 	);
 	return [answeredQuestions, unansweredQuestions];
 }
