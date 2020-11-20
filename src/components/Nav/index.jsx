@@ -2,8 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Nav.module.css';
 import useAuth from '../../hooks/useAuth';
+import UserInfoMenu from '../UserInfoMenu';
 const Nav = () => {
-	const { authUser } = useAuth();
 	return (
 		<nav className={styles.nav}>
 			<ul className={styles.navbar}>
@@ -23,22 +23,7 @@ const Nav = () => {
 					</Link>
 				</li>
 			</ul>
-			{authUser && (
-				<ul className={styles.userInfo}>
-					<li className={styles.item}>
-						<img
-							alt={`${authUser.name} Avatar`}
-							src={authUser.avatarURL}
-						/>
-					</li>
-					<li className={styles.item}>
-						<p>{`Welcome ${authUser.name}`}</p>
-					</li>
-					<li className={styles.item}>
-						<button>Log Out</button>
-					</li>
-				</ul>
-			)}
+			<UserInfoMenu />
 		</nav>
 	);
 };
