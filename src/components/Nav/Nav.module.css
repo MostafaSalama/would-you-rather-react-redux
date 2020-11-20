@@ -2,6 +2,7 @@
 	display: flex;
 	font-size: 19px;
 	background-color: #8936b3;
+	flex-wrap: wrap;
 }
 .navbar {
 	display: flex;
