@@ -4,7 +4,7 @@ import {
 	SET_QUESTIONS,
 	SET_USERS,
 } from '../actions/action-types';
-import { _getQuestions, _getUsers } from '../../data/_DATA';
+import { _getQuestions, _getUsers, _saveQuestion } from '../../data/_DATA';
 import { allQuestions, allUsers, setLoading } from '../actions/action-creators';
 
 export function getInitialData() {
@@ -15,6 +15,19 @@ export function getInitialData() {
 		dispatch(allUsers(users));
 		dispatch(allQuestions(Object.values(questions)));
 		dispatch(setLoading(false));
+	};
+}
+export function saveQuestion({ author, optionOneText, optionTwoText }) {
+	return async (dispatch) => {
+		console.log({ author, optionTwoText, optionOneText });
+		dispatch(setLoading(true));
+		const question = await _saveQuestion({
+			author,
+			optionOneText,
+			optionTwoText,
+		});
+		dispatch(setLoading(false));
+		return question;
 	};
 }
 export function questions(state = [], action) {
