@@ -1,6 +1,7 @@
 import React from 'react';
+import AddQuestionForm from '../components/AddQuestionForm';
 
 const AddQuestion = () => {
-	return <h1>Hello</h1>;
+	return <AddQuestionForm />;
 };
 export default AddQuestion;
