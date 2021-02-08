@@ -4,7 +4,7 @@ import {
 	SET_QUESTIONS,
 	SET_USERS,
 } from '../actions/action-types';
-import { _getQuestions, _getUsers, _saveQuestion } from '../../data/_DATA';
+import {_getQuestions, _getUsers, _saveQuestion, _saveQuestionAnswer} from '../../data/_DATA';
 import { allQuestions, allUsers, setLoading } from '../actions/action-creators';
 
 export function getInitialData() {
@@ -63,4 +63,17 @@ export function authUser(state = '', { type, username }) {
 		default:
 			return state;
 	}
+}
+
+export function saveQuestionAnswer({ authedUser, qid, answer }){
+	return async (dispatch) => {
+		dispatch(setLoading(true));
+		const question = await _saveQuestionAnswer({
+			authedUser,
+			qid,
+			answer,
+		});
+		dispatch(setLoading(false));
+		return question;
+	};
 }

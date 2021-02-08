@@ -56,3 +56,21 @@ img {
 	width: 50px;
 	height: 50px;
 }
+
+.answers {
+	display: flex;
+	flex-direction: column;
+	margin: 20px;
+	padding: 10px;
+}
+.answers > label {
+	margin-top: 10px;
+}
+.option {
+	padding: 20px;
+	margin-top: 10px;
+	border: 1px solid #3f51b5;
+}
+.option.active {
+	background: #b9b9e0;
+}
