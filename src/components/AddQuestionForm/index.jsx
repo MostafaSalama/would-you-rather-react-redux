@@ -8,17 +8,17 @@ const AddQuestionForm = () => {
 	const [optionOneText, setOptionOne] = useState('');
 	const [optionTwoText, setOptionTwo] = useState('');
 	const dispatch = useDispatch();
-	const { authUser } = useAuth();
+	const { authUser } = useAdispatch(
+		saveQuestion({
+			author: authUser.id,
+			optionOneText,
+			optionTwoText,
+		}),
+	)uth();
 	const history = useHistory();
 	function addNewQuestion() {
 		if (optionOneText && optionTwoText) {
-			dispatch(
-				saveQuestion({
-					author: authUser.id,
-					optionOneText,
-					optionTwoText,
-				}),
-			).then(() => {
+			.then(() => {
 				history.push('/');
 			});
 		}
