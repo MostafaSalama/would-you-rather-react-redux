@@ -1,6 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {useHistory} from 'react-router-dom';
 function QuestionItem({ question }) {
+	const history = useHistory();
+	function goToQuestion(){
+		const {id} = question;
+		history.push(`/questions/${id}`);
+	}
 	return (
 		<div className="flex">
 			<div className="w-300 2-300  question-container">
@@ -19,7 +25,7 @@ function QuestionItem({ question }) {
 					</div>
 				</div>
 				<div className="btn-container">
-					<button className="btn btn-outline">View Question</button>
+					<button className="btn btn-outline" onClick={goToQuestion}>View Question</button>
 				</div>
 			</div>
 		</div>
