@@ -1,8 +1,7 @@
 import './App.css';
 import React from 'react';
 import Nav from './components/Nav';
-import { useSelector } from 'react-redux';
-import { Redirect, Switch, Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import PrivateRoute from './components/PrivateRoute';
