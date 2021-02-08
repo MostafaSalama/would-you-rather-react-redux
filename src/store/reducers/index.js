@@ -19,7 +19,6 @@ export function getInitialData() {
 }
 export function saveQuestion({ author, optionOneText, optionTwoText }) {
 	return async (dispatch) => {
-		console.log({ author, optionTwoText, optionOneText });
 		dispatch(setLoading(true));
 		const question = await _saveQuestion({
 			author,

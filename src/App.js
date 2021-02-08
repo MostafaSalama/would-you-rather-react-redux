@@ -8,6 +8,7 @@ import Login from './pages/Login';
 import PrivateRoute from './components/PrivateRoute';
 import Leaderboard from './pages/Leaderboard';
 import AddQuestion from './pages/AddQuestion';
+import QuestionView from "./pages/QuestionView";
 function App() {
 	return (
 		<div>
@@ -21,6 +22,9 @@ function App() {
 				</PrivateRoute>
 				<PrivateRoute path="/add">
 					<AddQuestion />
+				</PrivateRoute>
+				<PrivateRoute path='/questions/:id'>
+						<QuestionView/>
 				</PrivateRoute>
 				<Route path="/login">
 					<Login />

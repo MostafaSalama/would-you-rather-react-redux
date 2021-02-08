@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import QuestionItem from '../QuestionItem';
 import useAnswerAndUnansweredQuestions from '../../hooks/useAnswerAndUnansweredQuestions';
 import styles from './QuestionList.module.css';
+import {sortByTimeStamp} from '../../utils'
 function QuestionsList() {
 	const [
 		answeredQuestions,
@@ -12,6 +13,10 @@ function QuestionsList() {
 	);
 	const [isAnsweredSelected, setAnsweredSelected] = useState(false);
 
+	/**
+	 * Run when the user toggle between
+	 * Answered and unAnswered questions
+	 */
 	function setQuestions() {
 		if (isAnsweredSelected) {
 			setCurrentQuestions(unAnsweredQuestions);
