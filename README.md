@@ -1,4 +1,12 @@
-# Would You Rather Project
+# GETTING STARTED
+  to start with the project 
+  * inside the project directory 
+  install all packages 
+  ``` npm install``` 
+  * start the server
+  ```npm start```
+The project uses https://github.com/facebook/create-react-app
+## Would You Rather Project
 
 This is the starter code for the final assessment project for Udacity's React & Redux course.
 
