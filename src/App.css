@@ -74,3 +74,9 @@ img {
 .option.active {
 	background: #b9b9e0;
 }
+.notFound {
+	display: flex;
+	align-items: center;
+	justify-items: center;
+	justify-content: center;
+}

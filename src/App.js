@@ -8,6 +8,7 @@ import PrivateRoute from './components/PrivateRoute';
 import Leaderboard from './pages/Leaderboard';
 import AddQuestion from './pages/AddQuestion';
 import QuestionView from "./pages/QuestionView";
+import NotFound from "./pages/NotFound";
 function App() {
 	return (
 		<div>
@@ -19,15 +20,21 @@ function App() {
 				<PrivateRoute exact path="/leaderboard">
 					<Leaderboard />
 				</PrivateRoute>
-				<PrivateRoute path="/add">
+				<PrivateRoute exact path="/add">
 					<AddQuestion />
 				</PrivateRoute>
-				<PrivateRoute path='/questions/:id'>
+				<PrivateRoute exct path='/questions/:id'>
 						<QuestionView/>
 				</PrivateRoute>
-				<Route path="/login">
+				<Route exact path="/login">
 					<Login />
 				</Route>
+				<PrivateRoute path='/404'>
+					<NotFound />
+				</PrivateRoute>
+				<PrivateRoute path='/*'>
+					<NotFound/>
+				</PrivateRoute>
 			</Switch>
 		</div>
 	);
