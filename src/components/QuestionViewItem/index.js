@@ -43,6 +43,9 @@ function QuestionViewItem({id}) {
             })
         }
     }
+    if (!question) {
+        return  '';
+    }
     return (
         <div className="flex">
             <div className="w-300 2-300  question-container">
