@@ -7,7 +7,7 @@ const LeaderboardList = () => {
 	return (
 		<div className={styles.listContainer}>
 			{data.map((d) => (
-				<LeaderboardItem {...d} />
+				<LeaderboardItem key={d.name} {...d} />
 			))}
 		</div>
 	);
