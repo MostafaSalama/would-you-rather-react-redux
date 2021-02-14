@@ -5,7 +5,7 @@ import {
 	SET_USERS,
 } from '../actions/action-types';
 import {_getQuestions, _getUsers, _saveQuestion, _saveQuestionAnswer} from '../../data/_DATA';
-import { allQuestions, allUsers, setLoading } from '../actions/action-creators';
+import {allQuestions, allUsers, setAuthUser, setLoading} from '../actions/action-creators';
 
 export function getInitialData() {
 	return async (dispatch) => {
@@ -53,6 +53,12 @@ export function isLoading(state = false, { type, value }) {
 			return value;
 		default:
 			return state;
+	}
+}
+
+export function loginUser(username){
+	return async (dispatch) => {
+		return dispatch(setAuthUser(username))
 	}
 }
 

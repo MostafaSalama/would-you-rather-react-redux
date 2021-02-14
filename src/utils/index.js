@@ -9,6 +9,9 @@ export function sortByTimeStamp(questions) {
     return res;
 }
 export function getAnsweredQuestion(question){
+    if (!question) {
+        return  null;
+    }
     const optionOneVotes = question.optionOne.votes.length
     const optionTwoVotes = question.optionTwo.votes.length;
     const totalVotes = optionOneVotes + optionTwoVotes ;
